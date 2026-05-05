@@ -60,25 +60,16 @@ body {
 }
 
 .goku {
-  max-height: 58vh;
-  max-width: 42vw;
+  width: 360px;
+  max-width: 35vw;
+  height: auto;
   object-fit: contain;
   z-index: 3;
-  margin-top: 80px;
+  margin-top: 70px;
   filter:
     drop-shadow(0 0 25px #ff8c00)
     drop-shadow(0 0 70px #ff0000);
   animation: gokuEnter 2.5s ease-out forwards, float 3s infinite ease-in-out 2.5s;
-}
-
-.subtitle {
-  margin-top: 25px;
-  color: white;
-  font-size: 26px;
-  letter-spacing: 7px;
-  text-shadow: 0 0 20px red;
-  opacity: 0;
-  animation: subtitleShow 1.5s ease forwards 2s;
 }
 
 @keyframes moveBg {
