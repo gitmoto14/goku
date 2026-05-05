@@ -15,26 +15,26 @@ body {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(rgba(255,0,0,.25), rgba(0,0,0,.85)),
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.85)),
     url("goku.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(3px) brightness(0.55);
-  transform: scale(1.15);
-  animation: moveBg 12s infinite alternate ease-in-out;
+  filter: blur(5px) brightness(.35);
+  transform: scale(1.2);
+  animation: moveBg 10s infinite alternate ease-in-out;
 }
 
 .overlay {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle, transparent 25%, rgba(0,0,0,.9) 75%),
+    radial-gradient(circle, rgba(255,120,0,.25), rgba(0,0,0,.9) 65%),
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,.03) 0px,
-      rgba(255,255,255,.03) 2px,
+      rgba(255,255,255,.04) 0px,
+      rgba(255,255,255,.04) 2px,
       transparent 2px,
-      transparent 6px
+      transparent 7px
     );
 }
 
@@ -50,33 +50,35 @@ body {
 
 .marvel-text {
   position: absolute;
-  font-size: 180px;
-  letter-spacing: 12px;
+  top: 10%;
+  font-size: 150px;
+  letter-spacing: 14px;
   color: #e50914;
-  text-shadow:
-    0 0 10px #ff0000,
-    0 0 40px #ff0000,
-    0 0 90px #ff5500;
-  animation: titleIntro 3s ease-out forwards;
+  opacity: .18;
+  text-shadow: 0 0 35px red;
+  animation: titleIntro 2.5s ease-out forwards;
 }
 
 .goku {
-  height: 70vh;
+  max-height: 58vh;
+  max-width: 42vw;
+  object-fit: contain;
   z-index: 3;
+  margin-top: 80px;
   filter:
-    drop-shadow(0 0 25px #ff7b00)
-    drop-shadow(0 0 60px #ff0000);
-  animation: gokuEnter 3s ease-out forwards, float 3s infinite ease-in-out 3s;
+    drop-shadow(0 0 25px #ff8c00)
+    drop-shadow(0 0 70px #ff0000);
+  animation: gokuEnter 2.5s ease-out forwards, float 3s infinite ease-in-out 2.5s;
 }
 
 .subtitle {
-  margin-top: 20px;
+  margin-top: 25px;
   color: white;
-  font-size: 28px;
-  letter-spacing: 8px;
+  font-size: 26px;
+  letter-spacing: 7px;
   text-shadow: 0 0 20px red;
   opacity: 0;
-  animation: subtitleShow 2s ease forwards 2.5s;
+  animation: subtitleShow 1.5s ease forwards 2s;
 }
 
 @keyframes moveBg {
@@ -91,29 +93,22 @@ body {
 }
 
 @keyframes titleIntro {
-  0% {
+  from {
     opacity: 0;
-    transform: scale(4);
+    transform: scale(3);
   }
-  60% {
-    opacity: 1;
-  }
-  100% {
+  to {
     opacity: .18;
     transform: scale(1);
   }
 }
 
 @keyframes gokuEnter {
-  0% {
+  from {
     opacity: 0;
-    transform: scale(.2) translateY(250px);
+    transform: scale(.4) translateY(180px);
   }
-  70% {
-    opacity: 1;
-    transform: scale(1.08) translateY(0);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
@@ -124,17 +119,12 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-18px);
+    transform: translateY(-16px);
   }
 }
 
 @keyframes subtitleShow {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
